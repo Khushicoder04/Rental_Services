@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .product {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 15px;
+            width: 200px;
+            float: left;
+            text-align: center;
+        }
+
+        .cart {
+            background-color: #ddd;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+
+        .cart h2 {
+            text-align: center;
+        }
+
+        .cart ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .cart li {
+            margin-bottom: 10px;
+        }
+
+        .checkout-btn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .checkout-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Online Store</h1>
+</header>
+
+<div class="product" id="product1">
+    <h2>Product 1</h2>
+    <p>$19.99</p>
+    <button onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+</div>
+
+<div class="product" id="product2">
+    <h2>Product 2</h2>
+    <p>$29.99</p>
+    <button onclick="addToCart('Product 2', 29.99)">Add to Cart</button>
+</div>
+
+<div class="cart">
+    <h2>Shopping Cart</h2>
+    <ul id="cartItems"></ul>
+    <button class="checkout-btn" onclick="checkout()">Checkout</button>
+</div>
+
+<script>
+    function addToCart(productName, price) {
+        var cartItemsElement = document.getElementById('cartItems');
+        var li = document.createElement('li');
+        li.textContent = productName + ' - $' + price;
+        cartItemsElement.appendChild(li);
+    }
+
+    function checkout() {
+        alert('Checkout functionality will be implemented on the server side.');
+        // Here, you would typically send the cart information to the server for processing.
+    }
+</script>
+
+</body>
+</html>
